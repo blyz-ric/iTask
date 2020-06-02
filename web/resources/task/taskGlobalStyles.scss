@@ -1,0 +1,29 @@
+/**
+ * Uses SASS compiled to global stylesheet, yote.css
+ * Any styles specific to the Task module that you ALSO want globally
+ * available should live here.
+ */
+
+@import "./admin/taskAdminStyles";
+
+.btn-container {
+    display: flex;
+}
+
+.form-container.-slim {
+    max-width: 100% !important;
+    margin-bottom: 2em;
+}
+
+.btn-disabled button {
+    background: #dddddd !important;
+    border: none !important;
+    font-weight: 600;
+}
+.btn-disabled button.reject {
+    color: red !important;
+}
+
+.btn-disabled button.approved {
+    color: green !important;
+} 

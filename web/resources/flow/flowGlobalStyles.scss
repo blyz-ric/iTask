@@ -1,0 +1,60 @@
+/**
+ * Uses SASS compiled to global stylesheet, yote.css
+ * Any styles specific to the Flow module that you ALSO want globally
+ * available should live here.
+ */
+
+@import "./admin/flowAdminStyles";
+
+.btn.plain-bordered {
+    border: 2px solid #d1cefb;
+    color: #7368f3;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 5%;
+    margin-right: 10px;
+    background: #fff;
+}
+
+.page-title {
+    margin-bottom: 1em;
+    h1 {
+        margin-bottom: 0;
+    }
+    > a, > div > button {
+        border:1px solid #CCC;
+        background:#6558f5;
+        box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
+        cursor:pointer;
+        vertical-align: middle;
+        width: 100px;
+        padding: 5px 15px;
+        text-align: center;
+        color: #fff;
+        float: right;
+        position: relative;
+        bottom: 36px;
+        font-size: 14px;
+        margin-left: 10px;
+    }
+
+    > div > .approved {
+        background: green;
+    }
+
+    > div > .reject {
+        background: red;
+    }
+}
+
+hr {
+    width: 100%;
+}
+
+.completed-task {
+    > h4 {
+        margin-top: 0;
+        font-weight: 600;
+        font-style: italic;
+    }
+}
