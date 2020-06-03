@@ -179,14 +179,14 @@ class SingleTask extends Binder {
           :
           <div className="page-title" style={{ opacity: isFetching ? 0.5 : 1 }}>
             <h1> { selectedTask.name } </h1>
+              <Link to={`/flows/${selectedTask._flow}`}> Back </Link>
               {
-                (isUserAdmin) ?
-                <div className={this.state.status ? "btn-disabled" : ""}>
-                  { this.state.status !== "approve" ?
-                    <button className="reject" onClick={() => this._handleTaskStatusUpdate('reject')}>Reject</button> : null } 
-                  { this.state.status !== "reject" ?
-                    <button className="approved" onClick={() => this._handleTaskStatusUpdate('approve')}>Approve</button> : null } 
-                </div> : ""
+                (isUserAdmin && selectedTask.status === "open") ?
+                  <div className={this.state.status ? "btn-disabled" : ""}>
+                    <button className="reject" onClick={() => this._handleTaskStatusUpdate('reject')}>Reject</button>
+                    <button className="approved" onClick={() => this._handleTaskStatusUpdate('approve')}>Approve</button>
+                  </div> 
+                : ""
               }                
               {
                 (loggedInUser._id === selectedTask.createdby  && selectedTask.status === "open") ?

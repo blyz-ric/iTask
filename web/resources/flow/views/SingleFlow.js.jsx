@@ -144,12 +144,12 @@ class SingleFlow extends Binder {
 
     return (
       <FlowLayout>
-        {/* <h3> Single Flow </h3> */}
         { isFlowEmpty ?
           (isFlowFetching ? <h2>Loading...</h2> : <h2>Empty.</h2>)
           :
           <div className="page-title" style={{ opacity: isFlowFetching ? 0.5 : 1 }}>
             <h1> { selectedFlow.name } </h1>
+            <Link to="/flows"> Back </Link>
             <Link to={`${this.props.match.url}/update`}> Edit </Link>
             <p> { selectedFlow.description }</p>            
             <hr/>

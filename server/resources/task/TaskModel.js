@@ -15,7 +15,7 @@ let ObjectId = mongoose.SchemaTypes.ObjectId;
 
 // define task schema
 const taskSchema = mongoose.Schema({
-  createdby:                { type: ObjectId, ref: 'Flow', required: '{PATH} is required!' }
+  createdby:                { type: ObjectId, ref: 'User' }
 
   // default values from Yote CLI
   , created:                  { type: Date, default: Date.now }
@@ -27,7 +27,7 @@ const taskSchema = mongoose.Schema({
   , name:                   { type: String, required: '{PATH} is required!' }
   , complete:               { type: Boolean, default: false }
   , status:                 { type: String, enum: ["approved", "awaiting_approval", "open"], default: "open" }
-
+  
 });
 
 // task instance methods go here
